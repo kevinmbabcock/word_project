@@ -1,0 +1,11 @@
+<h2><%= @word %></h2>
+
+<form action="/item/:id" method="post">
+  <div class="form-group">
+    <label for="definition">Add definition</label>
+    <input id="definition" name="definiton" class="form-control" type="text">
+  </div>
+  <button type="submit" class="btn-primary">Submit</button>
+</form>
+
+<p><a href="/">Return</a> to list of all words</p>
