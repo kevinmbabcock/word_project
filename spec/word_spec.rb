@@ -18,5 +18,15 @@ describe ('Word') do
     end
   end
 
+  describe (".all") do
+    it("save new word to array") do
+      new_word1 = Word.new({:name => "dog"})
+      new_word1.save
+      new_word2 = Word.new({:name => "car"})
+      new_word2.save
+      expect(Word.all).to(eq(["dog", "car"]))
+    end
+  end
+
 
 end

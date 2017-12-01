@@ -1,0 +1,15 @@
+<h2>Dictionary</h2>
+
+<h3>List of Words</h3>
+
+<% @list.each do |word| %>
+  <p><a href="/word/<=% word.id %>"><%= word.name %></a></p>
+<% end %>
+
+<form action="/" method="post">
+  <div class="form-group">
+    <label for="addWord">Add Word</label>
+    <input id="addWord" name="addWord" class="form-control" type="text"
+  </div>
+  <button type="submit" class="btn-primary">Submit</button>
+</form>
