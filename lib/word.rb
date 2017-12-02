@@ -9,11 +9,11 @@ class Word
     @id = @@list.length + 1
   end
 
-  def save
-    @@list.push(self)
+  def save()
+    @@list.push(self.name)
   end
 
-  def self.all
+  def self.all()
     @@list
   end
 
@@ -24,6 +24,10 @@ class Word
         return word
       end
     end
+  end
+
+  def self.clear()
+    @@list = []
   end
 
 

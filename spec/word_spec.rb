@@ -3,6 +3,9 @@ require('word')
 require('pry')
 
 describe ('Word') do
+  before() do
+    Word.clear
+  end
 
   describe ('#name') do
     it("create a new word") do
@@ -25,6 +28,15 @@ describe ('Word') do
       new_word2 = Word.new({:name => "car"})
       new_word2.save
       expect(Word.all).to(eq(["dog", "car"]))
+    end
+  end
+
+  describe (".clear") do
+    it("clear all entries from list") do
+      new_word = Word.new({:name => "cat"})
+      new_word.save
+      new_word.clear
+      expect(Word.all).to(eq([]))
     end
   end
 
