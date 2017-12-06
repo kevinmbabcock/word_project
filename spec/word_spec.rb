@@ -27,7 +27,7 @@ describe ('Word') do
       new_word1.save
       new_word2 = Word.new({:name => "car"})
       new_word2.save
-      expect(Word.all).to(eq(["dog", "car"]))
+      expect(Word.all).to(eq([new_word1, new_word2]))
     end
   end
 
@@ -35,7 +35,7 @@ describe ('Word') do
     it("clear all entries from list") do
       new_word = Word.new({:name => "cat"})
       new_word.save
-      new_word.clear
+      Word.clear
       expect(Word.all).to(eq([]))
     end
   end

@@ -1,16 +1,16 @@
 class Word
   @@list = []
-  attr_accessor(:definition, :name)
+  attr_accessor(:definitions, :name)
   attr_reader(:id)
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
-    @definition = []
+    @definitions = []
     @id = @@list.length + 1
   end
 
   def save()
-    @@list.push(self.name)
+    @@list.push(self)
   end
 
   def self.all()
@@ -20,7 +20,7 @@ class Word
   def self.find(id)
     word_id = id
     @@list.each do |word|
-      if word.id = word_id
+      if word.id == word_id
         return word
       end
     end
@@ -29,6 +29,5 @@ class Word
   def self.clear()
     @@list = []
   end
-
 
 end
