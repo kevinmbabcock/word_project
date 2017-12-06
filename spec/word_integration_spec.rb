@@ -12,11 +12,23 @@ describe('adding a new word', {:type => :feature}) do
   end
 end
 
-# describe('adding a new definition', {:type => :feature}) do
-#   it('adds definition to that words page') do
-#     new_word = Word.new(:name => "baseball")
-#     new_word.save
-#     visit("/word")
-#     click_link(new_word)
-#   end
-# end
+describe('adding a new definition', {:type => :feature}) do
+  it('adds definition to that words page') do
+    new_word = Word.new(:name => "baseball")
+    new_word.save
+    visit("/word/1")
+    fill_in("addDefinition", :with => "best game ever")
+    click_button("Submit")
+    expect(page).to have_content("best game ever")
+  end
+end
+
+describe('return to home page', {:type => :feature}) do
+  it('take user back to home page') do
+    new_word = Word.new(:name => "baseball")
+    new_word.save
+    visit("/word/1")
+    click_link("Return")
+    expect(page).to have_content("List of Words")
+  end
+end
