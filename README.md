@@ -12,7 +12,7 @@ This program lets kids create a dictionary of words, and allows them to add many
 
 * go to github.com/kevinmbabcock
 * search for word_project in the repositories
-* Open [link] (https://rocky-springs-16478.herokuapp.com/)to Heroku
+* Open link (https://rocky-springs-16478.herokuapp.com/)
 
 ## Specs
 
